@@ -1,0 +1,311 @@
+:root {
+    --font: #000000;
+    --foreground: #EAEAEA;
+    --background: #FFFFFF;
+    --border: #CECECE;
+    --anchor: #0000EE;
+    --anchor-visited: #551A8B;
+    --selection: #0000EE;
+}
+html, body {
+    padding: 0;
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    font-size: 16px;
+    line-height: 1.75; /* Keep this number unitless to avoid overlap and inheritance issues. */
+    -webkit-text-size-adjust: 100%; /* Prevent adjustments of font size after orientation changes in iOS. */
+    color: var(--font, #000000);
+    background-color: var(--background, #FFFFFF);
+}
+html:focus, body:focus {
+    outline: none;
+}
+
+header, footer, main, section, article {
+    display: block;
+}
+footer {
+    padding: 20px;
+    text-align: center;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 1.25em;
+}
+h1 {
+    font-size: 3.75em;
+}
+h2 {
+    font-size: 3.25em;
+}
+h3 {
+    font-size: 2.8em;
+}
+h4 {
+    font-size: 2.4em;
+}
+h5 {
+    font-size: 2em;
+}
+h6 {
+    font-size: 1.75em;
+}
+
+p {
+    display: block;
+    padding: 0;
+    margin: 1em 0;
+}
+span {
+    display: inline;
+}
+em, i {
+    font-style: italic;
+}
+strong, b {
+    font-weight: bolder;
+}
+
+del, s {
+    text-decoration: line-through;
+}
+ins, u {
+    text-decoration: underline;
+}
+del::before, del::after,
+ins::before, ins::after { /* Hides before and active tag info. */
+    clip-path: inset(100%);
+    clip: rect(1px, 1px, 1px, 1px);
+    height: 1px;
+    overflow: hidden;
+    position: absolute;
+    white-space: nowrap;
+    width: 1px;
+} /* Accessibility Screen Reading Technology */
+ins::before { content: " [insertion start] "; } ins::after { content: " [insertion end] "; }
+del::before { content: " [deletion start] "; } del::after { content: " [deletion start] "; }
+
+cite {
+    font-style: italic;
+}
+small {
+    font-size: 80%;
+}
+
+sup {
+    vertical-align: super;
+}
+sub {
+    vertical-align: sub;
+}
+sub, sup {
+    display: inline;
+    font-size: 80%;
+    line-height: 0;
+    position: relative;
+    vertical-align: baseline;
+}
+
+a, .anchor,
+a:link, .anchor:link { /* :link is for anchor tags that have not been visited yet. */
+    display: inline;
+    cursor: pointer;
+    color: var(--anchor, #0000EE);
+    background-color: transparent; /* Remove the gray background on active links in IE 10. */
+}
+a:hover, .anchor:hover,
+a:focus, .anchor:focus,
+a:visited, .anchor:visited,
+a:link:active, .anchor:link:active,
+a:visited:active, .anchor:visited:active {
+    color: var(--anchor-visited, #551A8B);
+}
+
+pre {
+    display: block;
+    background-color: var(--foreground, #EAEAEA);
+    padding: 20px;
+}
+pre, code {
+    font-family: monospace;
+}
+
+blockquote {
+    display: block;
+    position: relative;
+    padding: 0;
+    margin: 1em 40px;
+}
+blockquote::before {
+    position: absolute;
+    top: -6px;
+    left: -25px;
+    content: open-quote;
+    font-size: 3em;
+}
+blockquote::after {
+    position: absolute;
+    bottom: -6px;
+    right: -25px;
+    content: close-quote;
+    font-size: 3em;
+}
+
+q {
+    display: inline;
+}
+q::before {
+    content: open-quote;
+}
+q::after {
+    content: close-quote;
+}
+
+img {
+    border-style: none; /* Removes forced border from IE 10. */
+}
+
+hr {
+    display: block;
+    margin: 0.5em auto;
+    border: 1px inset var(--border, #CECECE);
+}
+
+ol {
+    display: block;
+    list-style-type: decimal;
+    margin: 1em 0;
+    padding-left: 40px;
+}
+ul {
+    display: block;
+    list-style-type: disc;
+    margin: 1em 0;
+    padding-left: 40px;
+}
+li {
+    display: list-item;
+}
+
+*::selection, *::-moz-selection, .selection {
+    color: var(--background, #FFFFFF);
+    background-color: var(--selection, #0000EE);
+}
+
+::-webkit-scrollbar {
+    width: 15px;
+    height: 15px;
+}
+::-webkit-scrollbar-track {
+    background-color: transparent;
+    box-shadow: inset 0 0 0 0 transparent;
+}
+::-webkit-scrollbar-thumb {
+    border-width: 3px;
+    background-color: var(--anchor, #0000EE);
+    background-clip: padding-box;
+    border-style: solid;
+    border-color: var(--border, #CECECE);
+}
+::-webkit-scrollbar-thumb:hover {
+    background-color: var(--border, #CECECE);
+}
+
+form {
+    display: block;
+}
+fieldset {
+    display: block;
+    padding: 1em 2.5%;
+    margin: 0 0;
+    border-width: 1px;
+    border-style: solid;
+    border-color: var(--border, #CECECE);
+}
+legend {
+    display: table;
+    max-width: 100%;
+    padding: 0;
+    margin: 0;
+    white-space: normal;
+    color: inherit;
+}
+label {
+    display: block;
+    margin: 0;
+    font-size: inherit;
+    line-height: inherit;
+    font-weight: bold;
+}
+input, select, textarea {
+    display: block;
+    padding: 0; /* Generally best not to touch this. If you want padding, remove the borders and apply it to a div. Then give the div padding. */
+    margin: 0;
+    border: 1px;
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
+    background-color: transparent;
+    border-style: solid;
+    border-color: inherit;
+}
+textarea {
+    overflow: auto; /* Removes the forced scroll bar for some browsers. */
+}
+input[type="radio"], input[type="checkbox"] {
+    box-sizing: border-box; /* Normalizes look for IE 10. */
+    display: inline-block;
+    width: initial;
+    padding: 0;
+    cursor: pointer;
+}
+input[type="color"], input[type="date"] {
+    cursor: pointer;
+}
+input[type="search"] {
+    -webkit-appearance: textfield; /* Correct the odd appearance in Chrome and Safari. */
+    outline-offset: -2px; /* Correct the outline style in Safari. */
+}
+input[type="search"]::-webkit-search-decoration {
+    -webkit-appearance: none; /* Remove the inner padding in Chrome and Safari on macOS. */
+}
+input:focus {
+    outline-color: var(--anchor, #0000EE);
+}
+select[multiple] {
+    height: auto;
+}
+optgroup {
+    margin: 0;
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
+}
+button, [type="submit"], [type="reset"], [type="button"] {
+    display: block;
+    width: auto;
+    padding: 2px 5px;
+    margin: 0;
+    border-width: 1px;
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
+    overflow: visible;
+    cursor: pointer;
+    color: var(--font, #000000);
+    background-color: var(--border, #CECECE);
+    border-style: solid;
+    border-color: transparent;
+    -webkit-appearance: button; /* Correct the inability to style clickable types in iOS and Safari. */
+}
+button:hover, [type="submit"]:hover, [type="reset"]:hover, [type="button"]:hover {
+    color: inherit;
+    background-color: transparent;
+}
+::-webkit-file-upload-button {
+    -webkit-appearance: button; /* Correct the inability to style clickable types in iOS and Safari. */
+    font: inherit; /* Change font properties to `inherit` in Safari. */
+}
+
