@@ -325,7 +325,7 @@ input::placeholder, textarea::placeholder {
     color: inherit;
     opacity: 0.5;
 }
-input:not(:placeholder-shown):not(:focus):invalid, select:not(:placeholder-shown):not(:focus):invalid, textarea:not(:placeholder-shown):not(:focus):invalid {
+input:not(:placeholder-shown):not(:focus):invalid, select:not(:placeholder-shown):not(:focus):invalid, textarea:not(:empty):not(:focus):invalid {
     background-color: var(--warning, #FFB1B1);
 }
 input:not(:focus):valid, select:not(:focus):valid, textarea:not(:focus):valid {
