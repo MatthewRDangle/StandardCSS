@@ -3,11 +3,11 @@
 <head>
     <meta charset="UTF-8"/>
     <title>Demo</title>
-    <link rel="stylesheet" href="bedrock.css"/>
+    <link rel="stylesheet" href="../boilerplate.css"/>
 </head>
 <body style="width: 900px; max-width: 95%; margin: 0 auto;">
     <header>
-        <h1>Bedrock Elements Example</h1>
+        <h1>FoundationCSS Elements</h1>
     </header>
     <main>
         <hr/>
@@ -93,6 +93,62 @@
         <br/><strong>Code</strong><br/>
         <pre>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</pre>
         <code>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</code>
+
+        <br/><br/>
+        <strong>Form</strong>
+        <form>
+            <div>
+                <label for="input1">Text Input</label>
+                <input id="input1" type="text" placeholder="placeholder value"/>
+            </div>
+            <fieldset>
+                <legend>Legend: Fieldset / Grouped Inputs</legend>
+                <div>
+                    <label for="inputF1">Text Input</label>
+                    <input id="inputF1" type="text" placeholder="placeholder value"/>
+                </div>
+                <div>
+                    <label for="inputF2">Text Input</label>
+                    <input id="inputF2" type="text" placeholder="placeholder value"/>
+                </div>
+            </fieldset>
+            <fieldset>
+                <legend>Legend: Fieldset / Grouped Inputs</legend>
+                <div>
+                    <label for="inputU1">Email Input</label>
+                    <input id="inputU1" type="email" placeholder="placeholder value"/>
+                </div>
+                <div>
+                    <label for="inputU2">Password Input</label>
+                    <input id="inputU2" type="password" placeholder="placeholder value"/>
+                </div>
+            </fieldset>
+            <div>
+                <label for="input4">Number</label>
+                <input id="input4" type="number"/>
+            </div>
+            <div>
+                <label for="input6">Phone</label>
+                <input id="input6" type="tel" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" placeholder="(999)999-9999" required/>
+            </div>
+            <div>
+                <label for="input7">Search</label>
+                <input id="input7" type="search" placeholder="search string"/>
+            </div>
+            <div>
+                <label for="input6">Textarea</label>
+                <textarea></textarea>
+            </div>
+            <div>
+                <input id="input2" type="checkbox"/>
+                <label for="input2">Checkbox</label>
+            </div>
+            <div>
+                <input id="input3" type="radio"/>
+                <label for="input3">Radio</label>
+            </div>
+            <button type="submit">Submit</button>
+        </form>
         <br/><br/><hr/>
     </main>
     <footer>
