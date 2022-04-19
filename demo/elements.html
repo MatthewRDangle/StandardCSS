@@ -99,13 +99,13 @@
         <form>
             <div>
                 <label for="input1">Text Input</label>
-                <input id="input1" type="text" placeholder="placeholder value" required/>
+                <input id="input1" type="text" placeholder="placeholder value"/>
             </div>
             <fieldset>
                 <legend>Legend: Fieldset / Grouped Inputs</legend>
                 <div>
                     <label for="inputF1">Text Input (valid)</label>
-                    <input id="inputF1" type="text" placeholder="placeholder value" required/>
+                    <input id="inputF1" type="text" value="Valid Answer" required/>
                 </div>
                 <div>
                     <label for="inputF2">Phone (invalid)</label>
@@ -116,31 +116,62 @@
                 <legend>Legend: Fieldset / Grouped Inputs</legend>
                 <div>
                     <label for="inputU1">Email Input</label>
-                    <input id="inputU1" type="email" placeholder="placeholder value" required/>
+                    <input id="inputU1" type="email" placeholder="johnjdoe@fakeemail.com"/>
                 </div>
                 <div>
                     <label for="inputU2">Password Input</label>
-                    <input id="inputU2" type="password" placeholder="placeholder value" required/>
+                    <input id="inputU2" type="password" placeholder="placeholder value"/>
                 </div>
             </fieldset>
             <div>
                 <label for="input4">Number</label>
-                <input id="input4" type="number" required/>
+                <input id="input4" type="number" placeholder="1"/>
             </div>
             <div>
                 <label for="input6">Phone</label>
-                <input id="input6" type="tel" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" placeholder="999-999-9999" required/>
+                <input id="input6" type="tel" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" placeholder="999-999-9999"/>
             </div>
             <div>
                 <label for="input7">Search</label>
-                <input id="input7" type="search" placeholder="search string" required/>
+                <input id="input7" type="search" placeholder="search string"/>
             </div>
             <div>
                 <label for="input9">Textarea</label>
-                <textarea id="input9" required></textarea>
+                <textarea id="input9"></textarea>
             </div>
             <div>
-                <input id="input2" type="checkbox" required/>
+                <label for="input10">Select / Dropdown</label>
+                <select id="input10">
+                    <option value="" disabled selected hidden>--Please Select--</option>
+                    <option value="1">Option 1</option>
+                    <option value="2">Option 2</option>
+                    <optgroup label="Group 1">
+                        <option value="1-1">Option 1-1</option>
+                        <option value="1-2">Option 1-2</option>
+                    </optgroup>
+                    <optgroup label="Group 2">
+                        <option value="2-1">Option 2-1</option>
+                        <option value="2-2">Option 2-2</option>
+                    </optgroup>
+                </select>
+            </div>
+            <div>
+                <label for="input11">Select / Dropdown</label>
+                <select id="input11" multiple>
+                    <option value="1">Option 1</option>
+                    <option value="2">Option 2</option>
+                    <optgroup label="Group 1">
+                        <option value="1-1">Option 1-1</option>
+                        <option value="1-2">Option 1-2</option>
+                    </optgroup>
+                    <optgroup label="Group 2">
+                        <option value="2-1">Option 2-1</option>
+                        <option value="2-2">Option 2-2</option>
+                    </optgroup>
+                </select>
+            </div>
+            <div>
+                <input id="input2" type="checkbox"/>
                 <label for="input2">Checkbox</label>
             </div>
             <div>

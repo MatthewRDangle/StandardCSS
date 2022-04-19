@@ -1,3 +1,7 @@
+/*
+    Stylesheet Properties ---
+    Modify these to change your stylesheet without having to change a line of CSS.
+*/
 :root {
     --headerFont: 'Geneva';
     --bodyFont: 'Arial';
@@ -16,25 +20,49 @@
 
     --success: #7CDC7C;
     --warning: #FFB1B1;
+
+    --transitionTimer: .2s;
 }
 
+
+
+/*
+    Global Selectors ---
+    These selectors affect all elements in the stylesheet.
+*/
 * {
-    box-sizing: border-box;
+    box-sizing: border-box; /* Standardizes how the box model is calculated across all elements. */
+}
+*::selection, *::-moz-selection, .selection {
+    color: var(--background, #FFFFFF);
+    background-color: var(--selection, #0000EE);
 }
 html, body {
-    padding: 0;
-    margin: 0;
+    padding: 0; /* Remove unnecessary padding. */
+    margin: 0; /* Remove unnecessary margin. */
+}
+body {
+    -webkit-text-size-adjust: 100%; /* Prevent adjustments of font size after orientation changes in iOS. */
+
+    /* Default Background */
+    background-color: var(--background, #FFFFFF);
+
+    /* Global Inherited Defaults */
     font-family: var(--headerFont, 'Geneva'), 'Helvetica', serif;
     font-size: 16px;
     line-height: 1.75; /* Keep this number unitless to avoid overlap and inheritance issues. */
-    -webkit-text-size-adjust: 100%; /* Prevent adjustments of font size after orientation changes in iOS. */
     color: var(--font, #000000);
-    background-color: var(--background, #FFFFFF);
 }
 html:focus, body:focus {
-    outline: none;
+    outline: none; /* Remove default agent outline focus from most browsers. */
 }
 
+
+
+/*
+    HTML5 Page Building ---
+    Common page building containers and elements. The following follows the W3C default spec.
+*/
 header, footer, main, section, article {
     display: block;
 }
@@ -68,6 +96,12 @@ h6 {
     font-size: 1.75em;
 }
 
+
+
+/*
+    HTML5 Content Elements ---
+    Common text and media elements. The following follows the W3C default spec.
+*/
 p {
     display: block;
     padding: 0;
@@ -76,13 +110,26 @@ p {
 span {
     display: inline;
 }
+img {
+    border-style: none; /* Removes forced border from IE 10. */
+}
+hr {
+    display: block;
+    margin: 0.5em auto;
+    border: 1px inset var(--border, #CECECE);
+}
+
+/* Emphasis (italic) Text */
 em, i {
     font-style: italic;
 }
+
+/* Strong (bold) Text */
 strong, b {
     font-weight: bolder;
 }
 
+/* Deleted (strike) and Insert (underline) */
 del, s {
     text-decoration: line-through;
 }
@@ -102,13 +149,17 @@ ins::before, ins::after { /* Hides before and active tag info. */
 ins::before { content: " [insertion start] "; } ins::after { content: " [insertion end] "; }
 del::before { content: " [deletion start] "; } del::after { content: " [deletion start] "; }
 
+/* Inline Citation. */
 cite {
     font-style: italic;
 }
+
+/* Small Text - Decreases font normal font size. */
 small {
     font-size: 80%;
 }
 
+/* Superscript and Subscript */
 sup {
     vertical-align: super;
 }
@@ -123,6 +174,7 @@ sub, sup {
     vertical-align: baseline;
 }
 
+/* Anchor Links */
 a, .anchor,
 a:link, .anchor:link { /* :link is for anchor tags that have not been visited yet. */
     display: inline;
@@ -142,6 +194,7 @@ a:visited:active, .anchor:visited:active {
     color: var(--anchor-visited, #551A8B);
 }
 
+/* Preformatted Text and Code Blocks */
 pre {
     display: block;
     background-color: var(--foreground, #EAEAEA);
@@ -151,6 +204,7 @@ pre, code {
     font-family: monospace;
 }
 
+/* Block Quotes */
 blockquote {
     display: block;
     position: relative;
@@ -172,6 +226,7 @@ blockquote::after {
     font-size: 3em;
 }
 
+/* Inline Quotes */
 q {
     display: inline;
 }
@@ -182,16 +237,7 @@ q::after {
     content: close-quote;
 }
 
-img {
-    border-style: none; /* Removes forced border from IE 10. */
-}
-
-hr {
-    display: block;
-    margin: 0.5em auto;
-    border: 1px inset var(--border, #CECECE);
-}
-
+/* Ordered and Underorderd Lists */
 ol {
     display: block;
     list-style-type: decimal;
@@ -208,11 +254,12 @@ li {
     display: list-item;
 }
 
-*::selection, *::-moz-selection, .selection {
-    color: var(--background, #FFFFFF);
-    background-color: var(--selection, #0000EE);
-}
 
+
+/*
+    Scrollbar ---
+    Customize the scrollbar. Only available in webkit support browsers; otherwise default is standard browser scrollbar
+*/
 ::-webkit-scrollbar {
     width: 15px; /* Vertical Scroll Bar */
     height: 15px; /* Horizontal Scroll Bar */
@@ -271,6 +318,12 @@ li {
     background-color: var(--scrollbarTrack);
 }
 
+
+
+/*
+    Form Control ---
+    Handles form specific elements.
+*/
 form {
     display: block;
     padding: 25px 35px;
@@ -283,6 +336,7 @@ fieldset {
     border-width: 1px;
     border-style: solid;
     border-color: var(--border, #CECECE);
+    transition-duration: var(--transitionTimer, .2s);
 }
 legend {
     display: table;
@@ -291,6 +345,7 @@ legend {
     margin: 0 0 0 -0.5em;
     white-space: normal;
     color: inherit;
+    transition-duration: var(--transitionTimer, .2s);
 }
 label {
     display: inline-block;
@@ -312,43 +367,54 @@ input, select, textarea {
     background-color: transparent;
     outline: 0;
     box-shadow: none;
-    transition: .2s;
+    transition-duration: var(--transitionTimer, .2s);
+}
+textarea {
+    overflow: auto; /* Removes the forced scroll bar for some browsers. */
+    max-width: 100%; /* Prevents it from busting out of parent container. */
 }
 input:focus, select:focus, textarea:focus,
 input:active, select:active, textarea:active {
     border-color: var(--accent, #0000EE);
+    outline-color: var(--anchor, #0000EE);
 }
-input:disabled, select:disabled, textarea:disabled {
+input:disabled, select:disabled, select:empty, textarea:disabled, option:disabled {
     opacity: 0.5;
+    cursor: not-allowed;
+}
+input:read-only, textarea:read-only {
+    cursor: not-allowed;
 }
 input::placeholder, textarea::placeholder {
     color: inherit;
     opacity: 0.5;
 }
-input:not(:placeholder-shown):not(:focus):invalid, select:not(:placeholder-shown):not(:focus):invalid, textarea:not(:empty):not(:focus):invalid {
-    background-color: var(--warning, #FFB1B1);
+option, optgroup {
+    padding: 0.25em;
+    margin: 0;
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
 }
-input:not(:focus):valid, select:not(:focus):valid, textarea:not(:focus):valid {
-    background-color: var(--success, #7CDC7C)
+
+/* Various User Inputs Validation */
+fieldset:invalid {
+    border-color: var(--warning, #FFB1B1);
 }
-textarea {
-    overflow: auto; /* Removes the forced scroll bar for some browsers. */
+fieldset:invalid > legend {
+    color: var(--warning, #FFB1B1);
 }
+input:not([value='']):not(:focus):invalid, select:not(:focus):invalid, textarea:not(:focus):invalid {
+    border-color: var(--warning, #FFB1B1);
+}
+input:not(:focus):required:valid, select:not(:focus):required:valid, textarea:not(:focus):required:valid {
+    border-color: var(--success, #7CDC7C)
+}
+
+/* Search Box */
 input[type="search"] {
     -webkit-appearance: none; /* Removes ugly browser styling in most modern browsers. */
     appearance: none; /* Removes ugly browser styling in most modern browsers. */
-}
-input[type="radio"], input[type="checkbox"] {
-    display: inline-block;
-    position: relative;
-    width: 1em;
-    height: 1em;
-    border: 1px solid var(--border, #CECECE);
-    vertical-align: -2px; /* Adjusts the position of the checkboxes on the text baseline */
-    color: var(--accent, #0000EE); /* Set here so that Windows' High-Contrast Mode can override */
-}
-input[type="color"], input[type="date"] {
-    cursor: pointer;
 }
 input[type="search"] {
     -webkit-appearance: textfield; /* Correct the odd appearance in Chrome and Safari. */
@@ -357,42 +423,104 @@ input[type="search"] {
 input[type="search"]::-webkit-search-decoration {
     -webkit-appearance: none; /* Remove the inner padding in Chrome and Safari on macOS. */
 }
-input:focus, select:focus, textarea:focus {
-    outline-color: var(--anchor, #0000EE);
+
+/* Checkbox and Radio */
+input[type="radio"], input[type="checkbox"] {
+    display: inline-block;
+    position: relative;
+    width: 1em;
+    height: 1em;
+    vertical-align: -2px; /* Adjusts the position of the checkboxes on the text baseline */
+    color: var(--accent, #0000EE); /* Set here so that Windows' High-Contrast Mode can override */
+    cursor: pointer;
+    transition-duration: var(--transitionTimer, .2s);
 }
+input[type="radio"]:before, input[type="checkbox"]:before {
+    content: ' '; /* Enables the following to work. */
+    width: inherit;
+    height: inherit;
+    background-color: var(--background, #FFFFFF);
+    outline: 1px solid var(--accent, #0000EE);
+    position: absolute;
+        top: 0;
+        left: 0;
+    transition-duration: inherit;
+}
+input[type="radio"]:checked:before, input[type="checkbox"]:checked:before {
+    background-color: var(--accent, #0000EE);
+}
+input[type="radio"]:after, input[type="checkbox"]:after {
+    color: transparent;
+    transition-duration: inherit;
+
+    /* Centers Checkmark */
+    position: absolute;
+        top: 50%;
+        left: 50%;
+    transform: translate(-50%, -50%);
+}
+input[type="radio"]:before {
+    border-radius: 10px;
+}
+input[type="radio"]:checked:after {
+    background-color: var(--background, #FFFFFF);
+}
+input[type="checkbox"]:after {
+    content: '\2714'; /* CSS Checkmark Code */
+}
+input[type="checkbox"]:checked:after {
+    color: var(--background, #FFFFFF);
+}
+input[type="radio"]:after {
+    content: ' '; /* Don't leave blank. */
+    width: 50%;
+    height: 50%;
+    background-color: transparent;
+    border-radius: 100%;
+    transition-duration: inherit;
+
+    /* Centers Checkmark */
+    position: absolute;
+        top: 50%;
+        left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/* Color and Date Picker */
+input[type="color"], input[type="date"] {
+    cursor: pointer; /* Enforces Pointer Cursor; not all browsers do. */
+}
+
+/* Mutliselect */
 select[multiple] {
     height: auto;
 }
-optgroup {
-    margin: 0;
-    font-family: inherit;
-    font-size: inherit;
-    line-height: inherit;
-}
-button, [type="submit"], [type="reset"], [type="button"] {
+
+/* Buttons */
+button, input[type="submit"], input[type="reset"], input[type="button"] {
     display: block;
     width: auto;
-    padding: 5px 8px;
+    padding: 7px 14px;
     margin: 0;
     border-width: 1px;
-    font-family: inherit;
-    font-size: inherit;
-    line-height: inherit;
-    overflow: visible;
+    font-family: inherit; /* Does not inherit by default. */
+    font-size: inherit; /* Does not inherit by default. */
+    line-height: inherit; /* Does not inherit by default. */
+    overflow: visible; /* Ensures inner text is visible on all browsers. */
     cursor: pointer;
-    color: var(--font, #000000);
-    background-color: var(--border, #CECECE);
+    color: var(--background, #000000);
+    background-color: var(--accent, #0000EE);
     border-style: solid;
     border-color: transparent;
     -webkit-appearance: button; /* Correct the inability to style clickable types in iOS and Safari. */
-    transition: .4s;
+    transition-duration: var(--transitionTimer, .2s);
 }
-button:hover, [type="submit"]:hover, [type="reset"]:hover, [type="button"]:hover {
-    color: inherit;
+button:hover, input[type="submit"]:hover, input[type="reset"]:hover, input[type="button"]:hover {
+    color: var(--accent, #0000EE);
     background-color: transparent;
+    border-color: var(--accent, #0000EE);
 }
-::-webkit-file-upload-button {
+::-webkit-file-upload-button { /* Modifies file uploader button for webkit browsers. */
     -webkit-appearance: button; /* Correct the inability to style clickable types in iOS and Safari. */
     font: inherit; /* Change font properties to `inherit` in Safari. */
 }
-
