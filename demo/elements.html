@@ -99,48 +99,48 @@
         <form>
             <div>
                 <label for="input1">Text Input</label>
-                <input id="input1" type="text" placeholder="placeholder value"/>
+                <input id="input1" type="text" placeholder="placeholder value" required/>
             </div>
             <fieldset>
                 <legend>Legend: Fieldset / Grouped Inputs</legend>
                 <div>
-                    <label for="inputF1">Text Input</label>
-                    <input id="inputF1" type="text" placeholder="placeholder value"/>
+                    <label for="inputF1">Text Input (valid)</label>
+                    <input id="inputF1" type="text" placeholder="placeholder value" required/>
                 </div>
                 <div>
-                    <label for="inputF2">Text Input</label>
-                    <input id="inputF2" type="text" placeholder="placeholder value"/>
+                    <label for="inputF2">Phone (invalid)</label>
+                    <input id="inputF2" type="tel" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" value="999-" placeholder="999-999-9999" required/>
                 </div>
             </fieldset>
             <fieldset>
                 <legend>Legend: Fieldset / Grouped Inputs</legend>
                 <div>
                     <label for="inputU1">Email Input</label>
-                    <input id="inputU1" type="email" placeholder="placeholder value"/>
+                    <input id="inputU1" type="email" placeholder="placeholder value" required/>
                 </div>
                 <div>
                     <label for="inputU2">Password Input</label>
-                    <input id="inputU2" type="password" placeholder="placeholder value"/>
+                    <input id="inputU2" type="password" placeholder="placeholder value" required/>
                 </div>
             </fieldset>
             <div>
                 <label for="input4">Number</label>
-                <input id="input4" type="number"/>
+                <input id="input4" type="number" required/>
             </div>
             <div>
                 <label for="input6">Phone</label>
-                <input id="input6" type="tel" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" placeholder="(999)999-9999" required/>
+                <input id="input6" type="tel" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" placeholder="999-999-9999" required/>
             </div>
             <div>
                 <label for="input7">Search</label>
-                <input id="input7" type="search" placeholder="search string"/>
+                <input id="input7" type="search" placeholder="search string" required/>
             </div>
             <div>
-                <label for="input6">Textarea</label>
-                <textarea></textarea>
+                <label for="input9">Textarea</label>
+                <textarea id="input9" required></textarea>
             </div>
             <div>
-                <input id="input2" type="checkbox"/>
+                <input id="input2" type="checkbox" required/>
                 <label for="input2">Checkbox</label>
             </div>
             <div>
