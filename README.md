@@ -102,6 +102,11 @@ This HTML boilerplate is designed to work with some of the latest technology tha
 As of 4/20/2022, 94% of all users browsers', according to CanIUse, support everything in document. Except the scrollbar,
 as only webkit supported browsers support this.
 
+## Accessibility
+All styling following the recommendations of W3C or integrates a commonly used browser style agent implementation. Since
+all elements being modified are still displayed by default, even if their appearance and aesthetic is overwritten 
+(ex. checkbox and radio), they still retain the accessible properties.
+
 ## Licencing
 Please see the legal directory for this project regarding use.
 
