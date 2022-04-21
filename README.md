@@ -82,7 +82,7 @@ it all.
   * Footers
 * Content Handling
   * Header
-  * Paragraph, span, 
+  * Paragraph, Span, 
   * Image
   * Delete, Emphasis, Strong, etc.
   * Citations
