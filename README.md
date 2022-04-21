@@ -108,7 +108,7 @@ all elements being modified are still displayed by default, even if their appear
 (ex. checkbox and radio), they still retain the accessible properties.
 
 ## Licencing
-Please see the legal directory for this project regarding use.
+Please see the `LICENSE` for this project regarding use.
 
 ## Release
 All releases will use the following format `v{major}.{minor}.{patch}`. 
