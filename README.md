@@ -112,7 +112,7 @@ Please see the `LICENSE` for this project regarding use.
 
 ## Release
 All releases will use the following format `v{major}.{minor}.{patch}`. 
-*Major = break backwards compatability.
-*Minor = additional features.
-*Patch = bug fixes, and simple changes.
+* Major = break backwards compatability.
+* Minor = additional features.
+* Patch = bug fixes, and simple changes.
 
