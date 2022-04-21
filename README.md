@@ -90,7 +90,7 @@ it all.
   * Preformatted Text (ex. pre, code, sample)
   * Quotes and Blockquotes
   * etc...
-* Scrollbar (webkit browsers online)
+* Scrollbar (webkit browsers only)
 * Form Control
   * Various Inputs
     * Text, Textarea, Select, Search, Radio, Checkbox, etc.
