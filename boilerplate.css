@@ -3,8 +3,12 @@
     Modify these to change your stylesheet without having to change a line of CSS.
 */
 :root {
+    --fontSize: 16px;
+    --lineHeight: 1.75; /* Keep this number unitless to avoid overlap and inheritance issues. */
+
     --headerFont: 'Geneva';
     --bodyFont: 'Arial';
+    --monoFont: 'Lucida Console';
 
     --font: #000000;
     --foreground: #EAEAEA;
@@ -19,7 +23,7 @@
     --scrollbarHover: #A8A8A8;
 
     --success: #7CDC7C;
-    --warning: #FFB1B1;
+    --warning: #E86363;
 
     --transitionTimer: .2s;
 }
@@ -49,8 +53,8 @@ body {
 
     /* Global Inherited Defaults */
     font-family: var(--headerFont, 'Geneva'), 'Helvetica', serif;
-    font-size: 16px;
-    line-height: 1.75; /* Keep this number unitless to avoid overlap and inheritance issues. */
+    font-size: var(--fontSize, 16px);
+    line-height: var(--lineHeight, 1.75);
     color: var(--font, #000000);
 }
 html:focus, body:focus {
@@ -71,6 +75,12 @@ footer {
     text-align: center;
 }
 
+
+
+/*
+    HTML5 Content Handling ---
+    Common text and media elements. The following follows the W3C default spec.
+*/
 h1, h2, h3, h4, h5, h6 {
     display: block;
     font-weight: bold;
@@ -95,13 +105,6 @@ h5 {
 h6 {
     font-size: 1.75em;
 }
-
-
-
-/*
-    HTML5 Content Elements ---
-    Common text and media elements. The following follows the W3C default spec.
-*/
 p {
     display: block;
     padding: 0;
@@ -194,14 +197,22 @@ a:visited:active, .anchor:visited:active {
     color: var(--anchor-visited, #551A8B);
 }
 
-/* Preformatted Text and Code Blocks */
+/* Preformatted Text, Code Blocks, and Sample Output. */
+pre {
+    font-family: var(--monoFont, 'Lucida Console'), monospace;
+}
 pre {
     display: block;
-    background-color: var(--foreground, #EAEAEA);
-    padding: 20px;
 }
-pre, code {
-    font-family: monospace;
+pre > code {
+    padding: 20px;
+    border-radius: 0;
+    display: block;
+}
+code {
+    padding: 0 5px;
+    background-color: var(--foreground, #EAEAEA);
+    border-radius: 10px;
 }
 
 /* Block Quotes */
@@ -399,13 +410,13 @@ option, optgroup {
 
 /* Various User Inputs Validation */
 fieldset:invalid {
-    border-color: var(--warning, #FFB1B1);
+    border-color: var(--warning, #E86363);
 }
 fieldset:invalid > legend {
-    color: var(--warning, #FFB1B1);
+    color: var(--warning, #E86363);
 }
 input:not([value='']):not(:focus):invalid, select:not(:focus):invalid, textarea:not(:focus):invalid {
-    border-color: var(--warning, #FFB1B1);
+    border-color: var(--warning, #E86363);
 }
 input:not(:focus):required:valid, select:not(:focus):required:valid, textarea:not(:focus):required:valid {
     border-color: var(--success, #7CDC7C)
