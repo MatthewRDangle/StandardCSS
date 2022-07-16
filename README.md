@@ -107,7 +107,7 @@ All styling following the recommendations of W3C or integrates a commonly used b
 all elements being modified are still displayed by default, even if their appearance and aesthetic is overwritten 
 (ex. checkbox and radio), they still retain the accessible properties.
 
-## Licencing
+## Licensing
 Please see the `LICENSE` for this project regarding use.
 
 ## Release
