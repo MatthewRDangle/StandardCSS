@@ -1,4 +1,4 @@
-# FoundationCSS
+# StandardCSS
 A dead-simple CSS boilerplate; it only uses element selectors to standardize styling across 
 browsers and reduce unnecessary class construction. Think NormalizeCSS or ResetCSS, but 
 customizable.
@@ -66,9 +66,9 @@ input:not(:focus):required:valid, select:not(:focus):required:valid, textarea:no
 ```
 
 ## Why Use This?
-FoundationCSS is designed to act as a bedrock / foundational layer for new themes and frameworks. If you are building
-your stylesheets from scratch and want a customizable cross-browser supported boilerplate, then FoundationCSS is for you.
-If importing a framework or extending one, then FoundationCSS is not for you.
+StandardCSS is designed to act as a bedrock / foundational layer for new themes and frameworks. If you are building
+your stylesheets from scratch and want a customizable cross-browser supported boilerplate, then StandardCSS is for you.
+If importing a framework or extending one, then StandardCSS is not for you.
 
 ## What is included in the Foundation layer?
 The foundation layer includes only few groups at the moment. However, there are plans to expand this has HTML and CSS
