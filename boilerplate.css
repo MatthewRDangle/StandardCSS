@@ -123,20 +123,20 @@ hr {
 }
 
 /* Emphasis (italic) Text */
-em, i {
+em {
     font-style: italic;
 }
 
-/* Strong (bold) Text */
-strong, b {
+/* Strong Accessibility Text */
+strong {
     font-weight: bolder;
 }
 
 /* Deleted (strike) and Insert (underline) */
-del, s {
+del {
     text-decoration: line-through;
 }
-ins, u {
+ins {
     text-decoration: underline;
 }
 del::before, del::after,
@@ -178,22 +178,17 @@ sub, sup {
 }
 
 /* Anchor Links */
-a, .anchor,
-a:link, .anchor:link { /* :link is for anchor tags that have not been visited yet. */
+a,
+a:link { /* :link is for anchor tags that have not been visited yet. */
     display: inline;
     cursor: pointer;
     color: var(--anchor, #0000EE);
     background-color: transparent; /* Remove the gray background on active links in IE 10. */
 }
-a:hover, .anchor:hover,
-a:focus, .anchor:focus {
+a:hover, a:focus {
     text-decoration: none;
 }
-a:hover, .anchor:hover,
-a:focus, .anchor:focus,
-a:visited, .anchor:visited,
-a:link:active, .anchor:link:active,
-a:visited:active, .anchor:visited:active {
+a:hover, a:focus, a:visited, a:link:active, a:visited:active {
     color: var(--anchor-visited, #551A8B);
 }
 
@@ -224,17 +219,19 @@ blockquote {
 }
 blockquote::before {
     position: absolute;
-    top: -6px;
-    left: -25px;
+    top: -0.5em;
+    left: -0.8em;
     content: open-quote;
-    font-size: 3em;
+    font-size: 3rem;
+    height: 1em;
 }
 blockquote::after {
     position: absolute;
-    bottom: -6px;
-    right: -25px;
+    bottom: -0.5em;
+    right: -0.8em;
     content: close-quote;
-    font-size: 3em;
+    font-size: 3rem;
+    height: 1em;
 }
 
 /* Inline Quotes */

@@ -98,8 +98,8 @@ it all.
   * Validation & Invalidation
 
 ## Compatability
-This HTML boilerplate is designed to work with some of the latest technology that is accepted by all modern browsers.
-As of 4/20/2022, 94% of all users browsers', according to CanIUse, support everything in document. Except the scrollbar,
+This HTML boilerplate is designed to work with the latest technology that is accepted by all modern browsers.
+As of 7/25/2023, 94% of all users browsers', according to CanIUse, support everything in document. Except the scrollbar,
 as only webkit supported browsers support this.
 
 ## Accessibility
@@ -109,10 +109,3 @@ all elements being modified are still displayed by default, even if their appear
 
 ## Licensing
 Please see the `LICENSE` for this project regarding use.
-
-## Release
-All releases will use the following format `v{major}.{minor}.{patch}`. 
-* Major = break backwards compatability.
-* Minor = additional features.
-* Patch = bug fixes, and simple changes.
-
